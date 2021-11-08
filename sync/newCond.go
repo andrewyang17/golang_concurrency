@@ -3,15 +3,13 @@ package main
 import (
 	"fmt"
 	"sync"
-	"time"
 )
 
 func main() {
 	c := sync.NewCond(&sync.Mutex{})
 	queue := make([]interface{}, 0, 10)
 
-	removeFromQueue := func(delay time.Duration) {
-		time.Sleep(delay)
+	removeFromQueue := func() {
 		c.L.Lock()
 		queue = queue[1:]
 		fmt.Println("Remove from queue")
@@ -21,7 +19,7 @@ func main() {
 
 	for i := 0; i < 10; i++ {
 		c.L.Lock()
-		for len(queue) == 2 {
+		if len(queue) == 2 {
 			fmt.Println("length is equals to 2")
 			// Wait doesn't just block, it suspends the current goroutine,
 			// allowing other goroutines to run on the OS thread.
@@ -32,7 +30,7 @@ func main() {
 
 		fmt.Println("Adding to queue")
 		queue = append(queue, struct{}{})
-		go removeFromQueue(1*time.Second)
+		go removeFromQueue()
 		c.L.Unlock()
 	}
 }
