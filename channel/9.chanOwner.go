@@ -4,7 +4,7 @@ import "fmt"
 
 func main() {
 	chanOwner := func() <-chan int {  // Consumer only has access to read channel
-		resultStream := make(chan int, 5)
+		resultStream := make(chan int, 5)  // Lexical Confinement, prevent other goroutines from writing it
 		go func() {
 			defer close(resultStream)
 			for i := 0; i <= 5; i++ {
