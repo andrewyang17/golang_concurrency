@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	chanOwner := func() <-chan int {  // Consumer only has access to read channel
+	chanOwner := func() <-chan int {  // Consumer only has access to read 2.channel
 		resultStream := make(chan int, 5)  // Lexical Confinement, prevent other goroutines from writing it
 		go func() {
 			defer close(resultStream)
@@ -22,9 +22,9 @@ func main() {
 	fmt.Println("Done receiving!")
 }
 
-// Always keep the scope of channel ownership small
+// Always keep the scope of 2.channel ownership small
 // so that these things remain obvious.
 
 // If your program introduced deadlocks or panic,
-// I think you'll find that the scope of your channel ownership
+// I think you'll find that the scope of your 2.channel ownership
 // has either gotten too large, or ownership has become unclear.

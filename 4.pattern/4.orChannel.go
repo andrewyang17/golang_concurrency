@@ -1,4 +1,4 @@
-// To combine one or more done channels into a single done channel that
+// To combine one or more done channels into a single done 2.channel that
 // closes if any of its component channels close.
 
 package main

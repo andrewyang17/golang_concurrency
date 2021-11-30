@@ -7,7 +7,7 @@ import (
 
 type ctxKey int
 
-// We don't export the keys that to store the data in context. We use functions to cast and retrieve them.
+// We don't export the keys that to store the data in 3.context. We use functions to cast and retrieve them.
 const (
 	ctxUserID ctxKey = iota
 	ctxAuthToken
@@ -39,7 +39,7 @@ func HandleResponse(ctx context.Context) {
 }
 
 // The larger issue is definitely the nature of what developers should store in instances of Context.
-// Context package: use context values only for "request-scoped data" that "transits processes and API boundaries",
+// Context package: use 3.context values only for "request-scoped data" that "transits processes and API boundaries",
 //                  not for passing optional parameters to functions.
 
 // Hueristics from the author (Concurrency in Go)

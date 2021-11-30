@@ -152,8 +152,8 @@ func main() {
 // Search took: 20.679160494s
 
 // Fan-out: a term to describe the process of starting multiple goroutines to handle input from the pipeline.
-// Fan-in: a term to describe the process of combining multiple results into one channel.
+// Fan-in: a term to describe the process of combining multiple results into one 2.channel.
 
-// What makes a stage of a pipeline suited for utilizing this pattern?
+// What makes a stage of a pipeline suited for utilizing this 4.pattern?
 // 1. It doesn't rely on values that the stage had calculated before.
 // 2. It takes a long time to run.

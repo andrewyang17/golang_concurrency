@@ -80,6 +80,6 @@ func main() {
 }
 
 // We can see that we have two branches of program running concurrently (printGreeting & printFarewell).
-// We've set up the standard preemption method by creating a done channel and passing it down through our call-graph.
-// If we close the done channel at any point in main, both branches will be canceled.
+// We've set up the standard preemption method by creating a done 2.channel and passing it down through our call-graph.
+// If we close the done 2.channel at any point in main, both branches will be canceled.
 // But we wouldn't have the extra information about deadlines and errors a Context gives us.

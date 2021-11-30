@@ -13,7 +13,7 @@ func main() {
 		wg.Add(1)
 		go func(i int){
 			defer wg.Done()
-			<-begin  // Wait until it's told it can continue, how? by closing the channel
+			<-begin  // Wait until it's told it can continue, how? by closing the 2.channel
 			fmt.Printf("%v has begun\n", i)
 		}(i)
 	}

@@ -10,7 +10,7 @@ func main() {
 			defer fmt.Println("doWork exited.")
 			defer close(completed)
 
-			for s := range strings {  // read from a nil channel => block
+			for s := range strings {  // read from a nil 2.channel => block
 				fmt.Println(s)
 			}
 		}()

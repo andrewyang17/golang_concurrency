@@ -1,4 +1,4 @@
-// Example of using channel to rebuild the program in sync/newCondBroadcast.
+// Example of using 2.channel to rebuild the program in 1.sync/newCondBroadcast.
 
 package main
 

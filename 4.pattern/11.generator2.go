@@ -52,4 +52,4 @@ func main() {
 	}
 }
 
-// An infinite channel of random integers generated on an as-needed basic!
+// An infinite 2.channel of random integers generated on an as-needed basic!

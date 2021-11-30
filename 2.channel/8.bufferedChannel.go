@@ -26,6 +26,6 @@ func main() {
 	}
 }
 
-// If a goroutine making writes to a channel has knowledge of
+// If a goroutine making writes to a 2.channel has knowledge of
 // how many writes it will make, it can be useful to create a
-// buffered channel whose capacity is the number of writes to be made.
+// buffered 2.channel whose capacity is the number of writes to be made.

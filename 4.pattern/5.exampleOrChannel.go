@@ -62,9 +62,9 @@ func main() {
 	fmt.Printf("Done after %v\n", time.Since(start))
 }
 
-// Our channel that closes after 3 second causes the entire channel created by the call
+// Our 2.channel that closes after 3 second causes the entire 2.channel created by the call
 // to close. This is because, despite its place in the tree the or function builds -
 // it will always close first and thus the channels that depend on its closure
 // will close as well.
 
-// There will be another way of doing this in the context package.
+// There will be another way of doing this in the 3.context package.

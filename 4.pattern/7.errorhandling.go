@@ -54,13 +54,13 @@ func main() {
 
 // We allow our main goroutine to make decision about what to do
 // when errors occur. We've successfully separated the concerns of
-// error handling from our producer goroutine. This is desirable because
-// the goroutine that spawned the producer goroutine has more context about
+// errors handling from our producer goroutine. This is desirable because
+// the goroutine that spawned the producer goroutine has more 3.context about
 // the running program, and can make more intelligent decisions about what to do
 // with errors.
 
 
-// We can simply remove the usage of done channel
+// We can simply remove the usage of done 2.channel
 // as the program is still executable without it, but
 // it would remove the clarity of the code,
 // which is not recommended.

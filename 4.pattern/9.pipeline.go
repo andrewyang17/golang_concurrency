@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	// Converts a discrete set of values into a stream of data on a channel
+	// Converts a discrete set of values into a stream of data on a 2.channel
 	generator := func(done <-chan interface{}, integers ...int) <-chan int {
 		intStream := make(chan int)
 
@@ -79,6 +79,6 @@ func main() {
 // This program turns out to have massive ramification,
 // we'll discover in later Fan-Out, Fan-In.
 
-// What would happen if we called close on the done channel before
+// What would happen if we called close on the done 2.channel before
 // the program was finished executing?
 // It will force the pipeline stage to terminate.
