@@ -10,12 +10,12 @@ import (
 func main() {
 	locale := func(ctx context.Context) (string, error) {
 		// deadline allows fail fast.
-		if deadline, ok := ctx.Deadline(); ok {
-			// The only catch is that you have to have some idea of how long your subordinate call-graph will take.
-			if deadline.Sub(time.Now().Add(3*time.Second)) <= 0 {
-				return "", context.DeadlineExceeded
-			}
-		}
+		//if deadline, ok := ctx.Deadline(); ok {
+		//	// The only catch is that you have to have some idea of how long your subordinate call-graph will take.
+		//	if deadline.Sub(time.Now().Add(3*time.Second)) <= 0 {
+		//		return "", context.DeadlineExceeded
+		//	}
+		//}
 		select {
 		case <-ctx.Done():
 			return "", ctx.Err()
